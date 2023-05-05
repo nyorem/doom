@@ -30,6 +30,7 @@
 - SPC f T = make the current frame fullscreen
 - g f = open a link
 
+- K = help of function under cursor
 - C-n/C-p for code/text completion
 - g s SPC = find a word in all opened buffers
 * dired
@@ -80,6 +81,11 @@ Use C-c C-e to transform the list of results into a wgrep buffer on which you ca
 - Z z = stash
 - ' = submodule actions
 - C-c C-c to fixup on commit/start interactive rebase on commit
+* flypell
+- need to install aspell + aspell-en/aspell-fr dictionaries first
+- SPC t s = toggle spell checking on file
+- M-x ispell-change-dictionary to choose which dictionary to use
+- z = to check spelling of word under cursor
 * org
 - SHIFT TAB to expand/hide everything
 - M-h/M-l to move the item one level up or down
