@@ -14,6 +14,7 @@
 - SPC o - = launch dired with directory containing current buffer
 
 - SPC o t = open terminal at the bottom
+  need to install libtool-bin package first
 - SPC o T = open terminal in new window
 
 - SPC h w = command -> keyboard shortcut
@@ -80,6 +81,7 @@ Use C-c C-e to transform the list of results into a wgrep buffer on which you ca
 - P -F p = push force to remote
 - Z z = stash
 - ' = submodule actions
+  add C-u to target all submodules
 - C-c C-c to fixup on commit/start interactive rebase on commit
 * flypell
 - need to install aspell + aspell-en/aspell-fr dictionaries first
