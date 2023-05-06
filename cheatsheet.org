@@ -9,6 +9,7 @@
 - SPC b k = kill buffer
 - SPC b p/n = previous/next buffer
 - SPC b i = ibuffer => all buffers
+- SPC b N = create new buffer
 
 - C-x d = dired
 - SPC o - = launch dired with directory containing current buffer
@@ -20,20 +21,27 @@
 - SPC h w = command -> keyboard shortcut
 - SPC h v = describe variable
 - SPC h k = describe key
+- SPC h f = describe function
 - SPC h r r = doom reload
 
 - SPC w C-o = vim's <C-w>o
+- SPC w = = make windows the same size
 
-- SPC q d = restart emacs server
+- SPC q d = restart Emacs server
 - SPC q K = kill Emacs daemon and clients
 - SPC q q = quit Emacs
 
 - SPC f T = make the current frame fullscreen
 - g f = open a link
+- SPC x = create a scratch buffer
 
 - K = help of function under cursor
 - C-n/C-p for code/text completion
-- g s SPC = find a word in all opened buffers
+- g s SPC = find a word in all opened buffers using Avy
+  x/X = to delete selection ('X' doesn't move the cursor)
+  i = use ispell to correct the word
+  y = copy word
+  t = teleport/move word
 * dired
 - SPC . = create file
 - + = create directory
@@ -66,12 +74,6 @@
 - SPC s p = search across the whole project
 Use C-c C-e to transform the list of results into a wgrep buffer on which you can act
 (see https://hungyi.net/posts/doom-emacs-search-replace-project/)
-* C++
-- SPC p g = configure project
-- SPC p c = compile project
-- SPC c d = find definition
-- SPC f f = format region/buffer
-- SPC c x = see list of errors
 * magit
 - SPC g C = git clone
 - SPC g g = git status
@@ -88,7 +90,21 @@ Use C-c C-e to transform the list of results into a wgrep buffer on which you ca
 - SPC t s = toggle spell checking on file
 - M-x ispell-change-dictionary to choose which dictionary to use
 - z = to check spelling of word under cursor
+* evil-snipe
+- f/F  = same as vim's f but pressing it repeatedly allow to go to next occurrences
+- s/S = same as 'f' but with two characters
+- ; = execute last f command
+* evil-multiedit
+- M-d/M-D to select next/previous occurrence
+- RET to exclude it/put it back
+- R to select all occurrences (visual mode)
 * org
 - SHIFT TAB to expand/hide everything
 - M-h/M-l to move the item one level up or down
 - TODO
+* C++
+- SPC p g = configure project
+- SPC p c = compile project
+- SPC c d = find definition
+- SPC f f = format region/buffer
+- SPC c x = see list of errors

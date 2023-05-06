@@ -52,13 +52,14 @@
 (setq projectile-track-known-projects-automatically nil)
 
 ;; Enable bb-mode in BitBake files
-(use-package! bitbake)
-(after! bitbake
+(use-package! bitbake
+  :config
   (setq auto-mode-alist (cons '("\\.bb$" . bitbake-mode) auto-mode-alist))
   (setq auto-mode-alist (cons '("\\.inc$" . bitbake-mode) auto-mode-alist))
   (setq auto-mode-alist (cons '("\\.bbappend$" . bitbake-mode) auto-mode-alist))
   (setq auto-mode-alist (cons '("\\.bbclass$" . bitbake-mode) auto-mode-alist))
-  (setq auto-mode-alist (cons '("\\.conf$" . bitbake-mode) auto-mode-alist)))
+  (setq auto-mode-alist (cons '("\\.conf$" . bitbake-mode) auto-mode-alist))
+  )
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
