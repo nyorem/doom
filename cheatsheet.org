@@ -54,12 +54,11 @@
 - C = copy file
 - R = rename/move
 - i + :w = rename files and directories
-- o = change sort order
 
+- o = change sort order
 - M = change mode
 - O = change owner
 - */ = select all directories
-
 - ( = switch between simple and full view
 - M-RET = preview file
 * projectile
@@ -72,11 +71,11 @@
 - SPC p r = find file in project recent files
 
 - SPC s p = search across the whole project
-Use C-c C-e to transform the list of results into a wgrep buffer on which you can act
-(see https://hungyi.net/posts/doom-emacs-search-replace-project/)
+  Use C-c C-e to transform the list of results into a wgrep buffer on which you can act
+  (see https://hungyi.net/posts/doom-emacs-search-replace-project/)
 * magit
-- SPC g C = git clone
 - SPC g g = git status
+- SPC g C = git clone
 - c c/c a = commit/amend
 - F p = pull from remote
 - P p = push to remote
@@ -100,8 +99,8 @@ Use C-c C-e to transform the list of results into a wgrep buffer on which you ca
 - R to select all occurrences (visual mode)
 * org
 - SHIFT TAB to expand/hide everything
-- M-h/M-l to move the item one level up or down
-- TODO
+- M-h/M-l/M-j/M-k to move the item one level up or down
+- M-RET/C-RET creates another headline/list entry with the same level (control puts you in insert mode)
 * C++
 - SPC p g = configure project
 - SPC p c = compile project
