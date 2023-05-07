@@ -84,7 +84,7 @@
 - ' = submodule actions
   add C-u to target all submodules
 - C-c C-c to fixup on commit/start interactive rebase on commit
-* flypell
+* flsypell
 - need to install aspell + aspell-en/aspell-fr dictionaries first
 - SPC t s = toggle spell checking on file
 - M-x ispell-change-dictionary to choose which dictionary to use
@@ -101,6 +101,15 @@
 - SHIFT TAB to expand/hide everything
 - M-h/M-l/M-j/M-k to move the item one level up or down
 - M-RET/C-RET creates another headline/list entry with the same level (control puts you in insert mode)
+- SPC m l l = create a link
+- SPC n l = store link under cursor
+- Code snippets
+  - < s TAB to create a snippet
+  - SPC m ' = open snippet in another buffer to edit it
+    C-c C-c when done
+  - C-C C-c to execute the snippet
+- SPC m t <tag> = convert headline to <tag>
+- SPC o a t = list all todos in all org files
 * C++
 - SPC p g = configure project
 - SPC p c = compile project

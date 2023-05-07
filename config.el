@@ -61,6 +61,9 @@
   (setq auto-mode-alist (cons '("\\.conf$" . bitbake-mode) auto-mode-alist))
   )
 
+(after! org
+  (setq org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))))
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
