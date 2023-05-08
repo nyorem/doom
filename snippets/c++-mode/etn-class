@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: etn-class
+# key: trigger-key
+# condition: t
+# --
+namespace etn::hello
+{
+  class ${1:Name} {
+      public:
+      explicit ${1:$(yas/substr yas-text "[^: ]*")}();
+      ${2:virtual ~${1:$(yas/substr yas-text "[^: ]*")}();}
+      $0
+  private:
+};
+// namespace etn::hello

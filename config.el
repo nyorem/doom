@@ -61,8 +61,23 @@
   (setq auto-mode-alist (cons '("\\.conf$" . bitbake-mode) auto-mode-alist))
   )
 
+;; Org-mode configuration
 (after! org
-  (setq org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)"))))
+  (setq org-log-done 'time)
+  (setq org-todo-keywords '((sequence "TODO(t)" "INPROGRESS(i)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)")))
+  (setq org-priority-faces '((?A :foreground "#e45649")
+                             (?B :foreground "#da8548")
+                             (?C :foreground "#0098dd")))
+  )
+
+;;; Set better priorities
+(use-package! org-fancy-priorities
+  :ensure t
+  :hook
+  (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("HIGH" "MEDIUM" "LOW"))
+  )
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.

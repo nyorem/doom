@@ -42,6 +42,7 @@
   i = use ispell to correct the word
   y = copy word
   t = teleport/move word
+- SPC i s = insert snippet
 * dired
 - SPC . = create file
 - + = create directory
@@ -84,7 +85,7 @@
 - ' = submodule actions
   add C-u to target all submodules
 - C-c C-c to fixup on commit/start interactive rebase on commit
-* flsypell
+* flyspell
 - need to install aspell + aspell-en/aspell-fr dictionaries first
 - SPC t s = toggle spell checking on file
 - M-x ispell-change-dictionary to choose which dictionary to use
@@ -97,11 +98,16 @@
 - M-d/M-D to select next/previous occurrence
 - RET to exclude it/put it back
 - R to select all occurrences (visual mode)
-* org
+* org-mode
 - SHIFT TAB to expand/hide everything
 - M-h/M-l/M-j/M-k to move the item one level up or down
 - M-RET/C-RET creates another headline/list entry with the same level (control puts you in insert mode)
 - SPC m l l = create a link
+  *Headline (if targetting the same file)
+  file:<FILE>::<line number>
+  file:<FILE>::<Headline>
+  elisp:<code>
+  shell:<command>
 - SPC n l = store link under cursor
 - Code snippets
   - < s TAB to create a snippet
@@ -109,7 +115,8 @@
     C-c C-c when done
   - C-C C-c to execute the snippet
 - SPC m t <tag> = convert headline to <tag>
-- SPC o a t = list all todos in all org files
+- SPC o a t = list all TODOs in all org files (listed by priority)
+- S-up to increase priority (no priority = B), called "priority cookies" in org-mode
 * C++
 - SPC p g = configure project
 - SPC p c = compile project
