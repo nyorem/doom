@@ -40,7 +40,8 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/dev/org/")
+(setq org-default-notes-file (concat org-directory "tasks.org"))
 
 ;; Disable word-wrapping everywhere
 (global-visual-line-mode t)
@@ -78,6 +79,11 @@
   :config
   (setq org-fancy-priorities-list '("HIGH" "MEDIUM" "LOW"))
   )
+
+;; Custom bindings
+(map! :leader
+      :desc "Run project tests"
+      "p T" #'helm-ctest)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
