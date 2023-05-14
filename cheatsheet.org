@@ -120,6 +120,7 @@
 * C++
 - SPC p g = configure project
 - SPC p c = compile project
+- SPC p F = find file in an *other* project
 - SPC c d = find definition
 - SPC f f = format region/buffer
 - SPC c x = see list of errors

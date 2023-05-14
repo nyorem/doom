@@ -69,6 +69,9 @@
   (setq org-priority-faces '((?A :foreground "#e45649")
                              (?B :foreground "#da8548")
                              (?C :foreground "#0098dd")))
+  (add-to-list 'org-capture-templates
+               '("w" "Work-related Task" entry (file org-default-notes-file)
+                 "* TODO %?" :empty-lines 1))
   )
 
 ;;; Set better priorities
