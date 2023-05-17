@@ -10,7 +10,7 @@
 ;(package! some-package)
 (package! bitbake)
 (package! org-fancy-priorities)
-(package! counsel-test)
+(package! helm-ctest)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:

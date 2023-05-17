@@ -3,13 +3,40 @@
 # key: trigger-key
 # condition: t
 # --
-namespace etn::hello
+/**
+********************************************************************************
+**
+**  Copyright (C) 2023 Eaton
+**
+**  This software is confidential and licensed under Eaton Proprietary License
+**  (EPL or EULA).
+**  This software is not authorized to be used, duplicated or disclosed to
+**  anyone without the prior written permission of Eaton.
+**  Limitations, restrictions and exclusions of the Eaton applicable standard
+**  terms and conditions, such as its EPL and EULA, apply.
+**
+********************************************************************************
+**
+**  \file ${1:$(yas/substr yas-text "[^: ]*")}.hpp
+**
+********************************************************************************
+**
+**  \brief $3
+**
+********************************************************************************
+**
+*/
+
+namespace etn::$2
 {
-  class ${1:Name} {
-      public:
-      explicit ${1:$(yas/substr yas-text "[^: ]*")}();
-      ${2:virtual ~${1:$(yas/substr yas-text "[^: ]*")}();}
-      $0
-  private:
-};
-// namespace etn::hello
+  class ${1:Name}
+  {
+    public:
+      explicit ${1:$(yas/substr yas-text "[^: ]*")}() = default;
+      ~${1:$(yas/substr yas-text "[^: ]*")}() = default;
+      $4
+
+    private:
+  };
+
+// namespace etn::$2

@@ -74,6 +74,19 @@
                  "* TODO %?" :empty-lines 1))
   )
 
+;; Function to sort TODOs under headline first alphabetically and then by priority
+;; https://stackoverflow.com/questions/22231431/sort-a-mixed-list-of-headings-in-org-mode
+(defun org-sort-entries-todo-alphabetical ()
+  (interactive)
+  ;; First sort alphabetically
+  (org-sort-entries t ?a)
+  ;; Then sort by TODO keyword
+  (org-sort-entries t ?o)
+  ;; Rotate subtree to show children
+  (org-cycle)               ; SUBTREE -> FOLDED
+  (org-cycle)               ; FOLDED -> CHILDREN
+  )
+
 ;;; Set better priorities
 (use-package! org-fancy-priorities
   :ensure t
@@ -86,7 +99,12 @@
 ;; Custom bindings
 (map! :leader
       :desc "Run project tests"
-      "p T" #'counsel-test-ctest)
+      "p T" #'helm-ctest)
+
+;; Set default spelling dictionary
+(after! ispell
+  (setq ispell-dictionary "en")
+  )
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.

@@ -10,6 +10,7 @@
 - SPC b p/n = previous/next buffer
 - SPC b i = ibuffer => all buffers
 - SPC b N = create new buffer
+- SPC b Z = kill all buried buffers
 
 - C-x d = dired
 - SPC o - = launch dired with directory containing current buffer
@@ -32,6 +33,7 @@
 - SPC q q = quit Emacs
 
 - SPC f T = make the current frame fullscreen
+- SPC f D = delete current file
 - g f = open a link
 - SPC x = create a scratch buffer
 
@@ -43,6 +45,7 @@
   y = copy word
   t = teleport/move word
 - SPC i s = insert snippet
+- SPC m e b = eval-buffer
 * dired
 - SPC . = create file
 - + = create directory
@@ -72,7 +75,7 @@
 - SPC p r = find file in project recent files
 
 - SPC s p = search across the whole project
-  Use C-c C-e to transform the list of results into a wgrep buffer on which you can act
+  Use C-c C-e to transform the list of results into a wgrep buffer on which you can act (:w to write with vertico, C-C C-C with helm)
   (see https://hungyi.net/posts/doom-emacs-search-replace-project/)
 * magit
 - SPC g g = git status
@@ -117,10 +120,15 @@
 - SPC m t <tag> = convert headline to <tag>
 - SPC o a t = list all TODOs in all org files (listed by priority)
 - S-up to increase priority (no priority = B), called "priority cookies" in org-mode
+- SPC X to start a capture
 * C++
 - SPC p g = configure project
 - SPC p c = compile project
 - SPC p F = find file in an *other* project
+- SPC p T = run tests
+  Use C-SPC to mark tests to run
 - SPC c d = find definition
-- SPC f f = format region/buffer
+- SPC c a = code action
+- SPC c f = format region/buffer
 - SPC c x = see list of errors
+- SPC i s = insert a snippet
