@@ -52,6 +52,11 @@
 ;; Disable projectile automatic project discovery
 (setq projectile-track-known-projects-automatically nil)
 
+;; Set default spelling dictionary
+(after! ispell
+  (setq ispell-dictionary "en")
+  )
+
 ;; Enable bb-mode in BitBake files
 (use-package! bitbake
   :config
@@ -75,7 +80,7 @@
   )
 
 ;; Function to sort TODOs under headline first alphabetically and then by priority
-;; https://stackoverflow.com/questions/22231431/sort-a-mixed-list-of-headings-in-org-mode
+;; see https://stackoverflow.com/questions/22231431/sort-a-mixed-list-of-headings-in-org-mode
 (defun org-sort-entries-todo-alphabetical ()
   (interactive)
   ;; First sort alphabetically
@@ -96,15 +101,43 @@
   (setq org-fancy-priorities-list '("HIGH" "MEDIUM" "LOW"))
   )
 
-;; Custom bindings
+;; helm-ctest
 (map! :leader
       :desc "Run project tests"
       "p T" #'helm-ctest)
 
-;; Set default spelling dictionary
-(after! ispell
-  (setq ispell-dictionary "en")
+;; dap-mode
+(require 'dap-cpptools)
+(defun stop-debugging-mode ()
+  (interactive)
+  (dap-delete-all-sessions)
+  (delete-other-windows)
   )
+
+(map! :map dap-mode-map
+      :leader
+      :prefix ("d" . "dap")
+
+      ;; basics
+      :desc "dap debug"         "d" #'dap-debug
+      :desc "dap restart"       "r" #'dap-debug-restart
+      :desc "dap next"          "n" #'dap-next
+      :desc "dap step in"       "i" #'dap-step-in
+      :desc "dap step out"      "o" #'dap-step-out
+      :desc "dap continue"      "c" #'dap-continue
+      :desc "dap close"         "k" #'stop-debugging-mode
+
+      ;; eval
+      :prefix ("de" . "Eval")
+      :desc "eval"                "e" #'dap-eval
+      :desc "eval thing at point" "s" #'dap-eval-thing-at-point
+      :desc "add expression"      "a" #'dap-ui-expressions-add
+      :desc "remove expression"   "d" #'dap-ui-expressions-remove
+
+      ;; breakpoints
+      :prefix ("db" . "Breakpoint")
+      :desc "dap breakpoint toggle"      "b" #'dap-breakpoint-toggle
+      )
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
