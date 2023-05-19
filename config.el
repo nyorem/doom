@@ -139,6 +139,42 @@
       :desc "dap breakpoint toggle"      "b" #'dap-breakpoint-toggle
       )
 
+;; Utility functions
+;; https://emacs.stackexchange.com/questions/13080/reloading-directory-local-variables
+(defun doom/reload-dir-locals-for-current-buffer ()
+  "reload dir locals for the current buffer"
+  (interactive)
+  (let ((enable-local-variables :all))
+    (hack-dir-local-variables-non-file-buffer)))
+
+(defun doom/reload-dir-locals-for-all-buffers-in-this-directory ()
+  "For every buffer with the same `default-directory` as the
+current buffer's, reload dir-locals."
+  (interactive)
+  (let ((dir default-directory))
+    (dolist (buffer (buffer-list))
+      (with-current-buffer buffer
+        (when (equal default-directory dir)
+          (doom/reload-dir-locals-for-current-buffer))))))
+
+;; https://github.com/doomemacs/doomemacs/issues/5305
+(defun doom/add-directory-as-project (dir)
+  "Register an arbitrary directory as a project.
+If DIR is not a valid project, a .project file will be created within it. This
+command will throw an error if a parent of DIR is a valid project (which would
+mask DIR)."
+  (interactive "D")
+  (let ((short-dir (abbreviate-file-name dir))
+        (proj-dir (doom-project-root dir)))
+    (unless (and proj-dir (file-equal-p proj-dir dir))
+      (with-temp-file (doom-path dir ".project")))
+    (setq proj-dir (doom-project-root dir))
+    (unless (and proj-dir (file-equal-p proj-dir dir))
+      (user-error "Can't add %S as a project, because %S is already a project"
+                  short-dir (abbreviate-file-name proj-dir)))
+    (message "%S was not a project; adding .project file to it" short-dir)
+    (projectile-add-known-project dir)))
+
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
 ;;
