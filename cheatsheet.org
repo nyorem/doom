@@ -84,11 +84,15 @@
 - c c/c a = commit/amend
 - F p = pull from remote
 - P p = push to remote
-- P -F p = push force to remote
+- g z = refresh git status window
+- P -f p = push force to remote
+- s = create a "spin-off" branch
+  Check https://magit.vc/manual/magit/Branch-Commands.html for more details
 - Z z = stash
 - ' = submodule actions
   add C-u to target all submodules
 - C-c C-c to fixup on commit/start interactive rebase on commit
+- C-c C-c in popup windows to save arguments across sessions
 * flyspell
 - need to install aspell + aspell-en/aspell-fr dictionaries first
 - SPC t s = toggle spell checking on file
@@ -106,6 +110,11 @@
 - SHIFT TAB to expand/hide everything
 - M-h/M-l/M-j/M-k to move the item one level up or down
 - M-RET/C-RET creates another headline/list entry with the same level (control puts you in insert mode)
+- S-up to increase priority (no priority = B), called "priority cookies" in org-mode
+- SPC o a t = open agenda with all TODOs
+- SPC m e = org export dispatcher
+- C-C C-c to convert between an unordered and an ordered list
+** Links
 - SPC m l l = create a link
   *Headline (if targetting the same file)
   file:<FILE>::<line number>
@@ -113,14 +122,22 @@
   elisp:<code>
   shell:<command>
 - SPC n l = store link under cursor
-- Code snippets
-  - < s TAB to create a snippet
-  - SPC m ' = open snippet in another buffer to edit it
-    C-c C-c when done
-  - C-C C-c to execute the snippet
+** Code snippets
+- <s TAB to create a snippet
+- SPC m ' = open snippet in another buffer to edit it
+  C-c C-c when done
+- C-C C-c to execute the snippet
+** Tags
 - SPC m t <tag> = convert headline to <tag>
 - SPC o a t = list all TODOs in all org files (listed by priority)
-- S-up to increase priority (no priority = B), called "priority cookies" in org-mode
+- SPC m q = add a tag (tags are inherited)
+- SPC o a m = list tasks with tags in agenda
+** Checkboxes
+- No tag and priority can be attached
+- RET = change the state (not started, in progress, done)
+- SPC m x = toggle checkbox
+- [/] or [%] + C-c C-c to add a "cookie" to track the number of tasks done
+** Capturing
 - SPC X to start a capture
 * C++
 - SPC p g = configure project
