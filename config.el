@@ -65,6 +65,7 @@
   (setq auto-mode-alist (cons '("\\.bbappend$" . bitbake-mode) auto-mode-alist))
   (setq auto-mode-alist (cons '("\\.bbclass$" . bitbake-mode) auto-mode-alist))
   (setq auto-mode-alist (cons '("\\.conf$" . bitbake-mode) auto-mode-alist))
+  (setq comment-start "#")
   )
 
 ;; Org-mode configuration

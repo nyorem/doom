@@ -93,6 +93,8 @@
   add C-u to target all submodules
 - C-c C-c to fixup on commit/start interactive rebase on commit
 - C-c C-c in popup windows to save arguments across sessions
+- y b = copy buffer revision
+- A A = cherry pick
 * flyspell
 - need to install aspell + aspell-en/aspell-fr dictionaries first
 - SPC t s = toggle spell checking on file
