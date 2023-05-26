@@ -49,6 +49,13 @@
 ;; Increase size of the which-key buffer at the bottom
 (setq which-key-allow-imprecise-window-fit nil)
 
+;; don't put deleted strings to X11 clipboard
+(setq select-enable-clipboard nil)
+
+;; copying and pasting selected blocks in visual mode to and from X11 clipboard
+(map! "S-C-c" #'clipboard-kill-ring-save)
+(map! "S-C-v" #'clipboard-yank)
+
 ;; Disable projectile automatic project discovery
 (setq projectile-track-known-projects-automatically nil)
 

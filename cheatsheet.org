@@ -25,6 +25,7 @@
 - SPC h f = describe function
 - SPC h r r = doom reload
 - SPC h e = *Messages* buffer
+- K = help of thing under cursor
 
 - SPC w C-o = vim's <C-w>o
 - SPC w = = make windows the same size
@@ -81,6 +82,8 @@
 * magit
 - SPC g g = git status
 - SPC g C = git clone
+- SPC g B = git blame ('q' to quit)
+- SPC g f c = show commit
 - c c/c a = commit/amend
 - F p = pull from remote
 - P p = push to remote
@@ -115,6 +118,7 @@
 - S-up to increase priority (no priority = B), called "priority cookies" in org-mode
 - SPC o a t = open agenda with all TODOs
 - SPC m e = org export dispatcher
+- SPC m r r = refile
 - C-C C-c to convert between an unordered and an ordered list
 ** Links
 - SPC m l l = create a link
@@ -148,8 +152,10 @@
 - SPC p T = run tests
   Use C-SPC to mark tests to run
 - SPC c d = find definition
+- SPC c D = find references
 - SPC c a = code action
 - SPC c f = format region/buffer
+- SPC c r = rename variable/function name in all project files
 - SPC c x = see list of errors
 - SPC i s = insert a snippet
 * Emacs Lisp
