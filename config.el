@@ -59,6 +59,8 @@
 ;; Disable projectile automatic project discovery
 (setq projectile-track-known-projects-automatically nil)
 
+(setq lsp-clients-clangd-args '("--j=4" "--background-index=false"))
+
 ;; Set default spelling dictionary
 (after! ispell
   (setq ispell-dictionary "en")
