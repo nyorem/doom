@@ -55,6 +55,24 @@
 ;; copying and pasting selected blocks in visual mode to and from X11 clipboard
 (map! "S-C-c" #'clipboard-kill-ring-save)
 (map! "S-C-v" #'clipboard-yank)
+;; in WSL, we use the clip.exe command to copy
+(when (string-match "-[Mm]icrosoft" operating-system-release)
+    (defun copy-selected-text (start end)
+      (interactive "r")
+      (if (use-region-p)
+          (let ((text (buffer-substring-no-properties start end)))
+            (shell-command (concat "echo '" text "' | clip.exe")))))
+  (map! :leader "y" #'copy-selected-text)
+  )
+
+;; remove background color in magit for added and removed hunks
+(custom-set-faces
+ '(magit-diff-added-highlight ((((type tty)) (:background nil))))
+ '(magit-diff-removed-highlight ((((type tty)) (:background nil)))))
+
+;; enable mouse support in console mode
+(unless (display-graphic-p)
+  (xterm-mouse-mode 1))
 
 ;; Disable projectile automatic project discovery
 (setq projectile-track-known-projects-automatically nil)
