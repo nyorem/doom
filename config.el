@@ -107,6 +107,12 @@
                  "* TODO %?" :empty-lines 1))
   )
 
+;; multi-magit
+(use-package! multi-magit)
+(map! :leader
+      :desc "multi-magit status"
+      "g m" #'multi-magit-status)
+
 ;; Function to sort TODOs under headline first alphabetically and then by priority
 ;; see https://stackoverflow.com/questions/22231431/sort-a-mixed-list-of-headings-in-org-mode
 (defun org-sort-entries-todo-alphabetical ()
