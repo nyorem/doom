@@ -113,6 +113,12 @@
       :desc "multi-magit status"
       "g m" #'multi-magit-status)
 
+;; flymake-shellcheck
+(use-package flymake-shellcheck
+  :commands flymake-shellcheck-load
+  :init
+  (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
+
 ;; Function to sort TODOs under headline first alphabetically and then by priority
 ;; see https://stackoverflow.com/questions/22231431/sort-a-mixed-list-of-headings-in-org-mode
 (defun org-sort-entries-todo-alphabetical ()
